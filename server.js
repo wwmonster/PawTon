@@ -88,7 +88,7 @@ async function getPlayer(client, userId) {
   return result.rows[0];
 }
 
-app.get('/api/health', async (req, res) => {
+app.get('/healthz', async (req, res) => {
   try { await pool.query('SELECT 1'); res.json({ ok: true }); }
   catch (e) { res.status(500).json({ ok: false }); }
 });
